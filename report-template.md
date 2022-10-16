@@ -18,54 +18,31 @@ In this analysis, I used a supervised learning model by following a basic patter
 I used the following steps:
     * Split the Data into Training and Testing Sets
     
-        '''
-        # Import the train_test_learn module
-        from sklearn.model_selection import train_test_split
-        # Split the data using train_test_split
-        # Assign a random_state of 1 to the function
-        X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
-        '''
+        'from sklearn.model_selection import train_test_split
+        X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)'
         
     * Create a Logistic Regression Model with the Original Data
     
-        '''
-        # Import the LogisticRegression module from SKLearn
-        from sklearn.linear_model import LogisticRegression
-        # Instantiate the Logistic Regression model
-        # Assign a random_state parameter of 1 to the model
-        model = LogisticRegression(random_state=1)
-        # Fit the model using training data
-        lr_orginal_model = model.fit(X_train, y_train)
-        '''
+        'from sklearn.linear_model import LogisticRegression
+         model = LogisticRegression(random_state=1)
+         lr_orginal_model = model.fit(X_train, y_train)'
         
     * Predict a Logistic Regression Model with Resampled Training Data
         
-        '''
-        # Make a prediction using the testing data
-        y_original_pred = lr_orginal_model.predict(X_test)
-        '''
+        'y_original_pred = lr_orginal_model.predict(X_test)'
 
 I evaluated the original and resampled data model’s performance by doing the following:
     * Calculate the accuracy score of the model.
     
-        '''
-        # Print the balanced_accuracy score of the model
-        baso = balanced_accuracy_score(y_test, y_original_pred)
-        '''
+        'baso = balanced_accuracy_score(y_test, y_original_pred)'
         
     * Generate a confusion matrix.
     
-        '''
-        # Generate a confusion matrix for the model
-        confusion_matrix(y_test, y_original_pred)
-        '''
+        'confusion_matrix(y_test, y_original_pred)'
         
     * Print the classification report.
     
-        '''
-        # Print the classification report for the model
-        print(classification_report_imbalanced(y_test, y_original_pred))
-        '''
+        'print(classification_report_imbalanced(y_test, y_original_pred))'
         
 ## Results
 
