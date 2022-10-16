@@ -56,17 +56,19 @@ To further explain, any prediction falls into one of two categories: true or fal
     * *Formula: Recall = TPs / (TPs + FNs)*<br />
         * To get the recall, we start with the number of TPs — that is, the number of times that the model correctly predicted a fraudulent transaction. Then compare this number to the total number of actually fraudulent transactions — including the ones that the model missed (that is, the FNs).<br />
 <br />
-* **Machine Learning Model 1:**<br />
-  * Description of Model 1 Accuracy, Precision, and Recall scores<br />
+
+* **Machine Learning Model 1:** <br />
+  * **Description of Model 1 Accuracy, Precision, and Recall scores**<br />
     * Accuracy: 0.9520479254722232<br />
     * Precision: 0.85<br />
     * Recall: 0.91<br />
 <br />
-* **Machine Learning Model 2:**<br />
-  * Description of Model 2 Accuracy, Precision, and Recall scores<br />
-    * Accuracy: 0.9936781215845847<br />
-    * Precision: 0.84<br />
-    * Recall: 0.99<br />
+
+* **Machine Learning Model 2:**
+  * **Description of Model 2 Accuracy, Precision, and Recall scores**
+    * Accuracy: 0.9936781215845847
+    * Precision: 0.84
+    * Recall: 0.99
 <br />
 
 ## Summary
