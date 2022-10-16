@@ -2,51 +2,33 @@
 
 ## Overview of the Analysis
 
-* Explain the purpose of the analysis.
-Credit risk poses a classification problem that’s inherently imbalanced. This is because healthy loans easily outnumber risky loans. I will use various techniques to train and evaluate models with imbalanced classes that can identify the creditworthiness of borrowers.
+Credit risk poses a classification problem that’s inherently imbalanced. This is because healthy loans easily outnumber risky loans. Various techniques are used in this analysis to train and evaluate models with imbalanced classes that can identify the creditworthiness of borrowers.  A dataset of historical lending activity from a peer-to-peer lending services company is analyzed to identify the creditworthiness of borrowers.</nl>
+</nl>
+In the given dataset, a value of 0 in the “loan_status” column means that the loan/borrower is healthy or creditworthy. A value of 1 means that the loan/borrower is unhealthy, or has a high risk of defaulting.</nl>
+</nl>
+In this analysis, I used a supervised learning model by following a basic pattern: model-fit-predict. In this three-stage pattern, I presented a machine learning algorithm with data (the model stage), and the algorithm learns from this data (the fit stage) to form a predictive model (the predict stage).</nl>
+</nl>
 
-* Explain what financial information the data was on, and what you needed to predict.
-I used a dataset of historical lending activity from a peer-to-peer lending services company to identify the creditworthiness of borrowers.
-
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-A value of 0 in the “loan_status” column means that the loan is healthy. A value of 1 means that the loan has a high risk of defaulting.
-
-* Describe the stages of the machine learning process you went through as part of this analysis.
-In this analysis, I used a supervised learning model by following a basic pattern: model-fit-predict. In this three-stage pattern, I presented a machine learning algorithm with data (the model stage), and the algorithm learns from this data (the fit stage) to form a predictive model (the predict stage).
-
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
-I used the following steps:
-    * Split the Data into Training and Testing Sets
-    
-        'from sklearn.model_selection import train_test_split
-        X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)'
-        
-    * Create a Logistic Regression Model with the Original Data
-    
-        'from sklearn.linear_model import LogisticRegression
-         model = LogisticRegression(random_state=1)
-         lr_orginal_model = model.fit(X_train, y_train)'
-        
-    * Predict a Logistic Regression Model with Resampled Training Data
-        
-        'y_original_pred = lr_orginal_model.predict(X_test)'
-
-I evaluated the original and resampled data model’s performance by doing the following:
-    * Calculate the accuracy score of the model.
-    
-        'baso = balanced_accuracy_score(y_test, y_original_pred)'
-        
-    * Generate a confusion matrix.
-    
-        'confusion_matrix(y_test, y_original_pred)'
-        
-    * Print the classification report.
-    
-        'print(classification_report_imbalanced(y_test, y_original_pred))'
-        
+* **Methods used**</nl>
+Steps:
+    * Split the Data into Training and Testing Sets</nl>
+            'from sklearn.model_selection import train_test_split'</nl>
+            'X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)'</nl>
+    * Create a Logistic Regression Model with the Original Data</nl>
+        'from sklearn.linear_model import LogisticRegression'</nl>
+        'model = LogisticRegression(random_state=1)'</nl>
+        'lr_orginal_model = model.fit(X_train, y_train)'</nl>
+    * Predict a Logistic Regression Model with Resampled Training Data</nl>
+        'y_original_pred = lr_orginal_model.predict(X_test)'</nl>
+    * Evaluate the original and resampled data model’s performance by doing the following:</nl>
+        * Calculate the accuracy score of the model.</nl>
+            'baso = balanced_accuracy_score(y_test, y_original_pred)'</nl>
+        * Generate a confusion matrix.</nl>
+            'confusion_matrix(y_test, y_original_pred)'</nl>
+        * Print the classification report.</nl>
+            'print(classification_report_imbalanced(y_test, y_original_pred))'</nl>
+</nl>
 ## Results
-
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
 
 A classification algorithm results in two or more outcomes. Classifying unhealthy loans, for example, results in two outcomes: a loan borrower is either at risk for defaulting (unhealthy) or not. We can categorize these two predictions according to a confusion matrix.
 
@@ -62,24 +44,24 @@ If the model predicted a loan/borrower as not healthy, but the loan/borrower rea
 
 If the model predicted a loan/borrower as not healthy, and the loan/borrower really was not healthy, we call that prediction a true negative (TN).
 
-Definition of terms and formulas:
-    * Accuracy: measures how often the model was correct. 
-          Formula: accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs) 
-              It does so by calculating the ratio of the number of correct predictions to the total number of outcomes.
-    * Precision: measures how confident we are that the model correctly made the positive predictions (also known as the positive predictive value (PPV)). 
-          Formula: precision = TPs ÷ (TPs + FPs)
-              We get the precision by dividing the number of TPs by the number of all the positives. (The latter is the sum of the TPs and the FPs.)
-    * Recall: measures the number of actually fraudulent transactions that the model correctly classified as fraudulent. 
-          Formula: Recall = TPs / (TPs + FNs) 
-              To get the recall, we start with the number of TPs — that is, the number of times that the model correctly predicted a fraudulent transaction. Then compare this number to the total number of actually fraudulent transactions — including the ones that the model missed (that is, the FNs).
+**Definition of terms and formulas:**
+    * **Accuracy:** measures how often the model was correct. 
+          * *Formula: accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs)* 
+              * It does so by calculating the ratio of the number of correct predictions to the total number of outcomes.
+    * **Precision:** measures how confident we are that the model correctly made the positive predictions (also known as the positive predictive value (PPV)). 
+          * *Formula: precision = TPs ÷ (TPs + FPs)*
+              * We get the precision by dividing the number of TPs by the number of all the positives. (The latter is the sum of the TPs and the FPs.)
+    * **Recall:** measures the number of actually fraudulent transactions that the model correctly classified as fraudulent. 
+          * *Formula: Recall = TPs / (TPs + FNs)* 
+              * To get the recall, we start with the number of TPs — that is, the number of times that the model correctly predicted a fraudulent transaction. Then compare this number to the total number of actually fraudulent transactions — including the ones that the model missed (that is, the FNs).
               
-* Machine Learning Model 1:
+* **Machine Learning Model 1:**
   * Description of Model 1 Accuracy, Precision, and Recall scores.
         * Accuracy: 0.9520479254722232
         * Precision: 0.85
         * Recall: 0.91
 
-* Machine Learning Model 2:
+* **Machine Learning Model 2:**
   * Description of Model 2 Accuracy, Precision, and Recall scores.
         * Accuracy: 0.9936781215845847
         * Precision: 0.84
