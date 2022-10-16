@@ -9,23 +9,22 @@ In the given dataset, a value of 0 in the “loan_status” column means that th
 In this analysis, I used a supervised learning model by following a basic pattern: model-fit-predict. In this three-stage pattern, I presented a machine learning algorithm with data (the model stage), and the algorithm learns from this data (the fit stage) to form a predictive model (the predict stage).<br />
 <br />
 
-* **Methods used**\
-Steps:
-    * Split the Data into Training and Testing Sets  
-            `from sklearn.model_selection import train_test_split`<br />
-            `X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)`<br />
-    * Create a Logistic Regression Model with the Original Data<br />
-        `from sklearn.linear_model import LogisticRegression`<br />
-        `model = LogisticRegression(random_state=1)`<br />
-        `lr_orginal_model = model.fit(X_train, y_train)`<br />
-    * Predict a Logistic Regression Model with Resampled Training Data<br />
-        `y_original_pred = lr_orginal_model.predict(X_test)`<br />
-    * Evaluate the original and resampled data model’s performance by doing the following:<br />
-        * Calculate the accuracy score of the model.<br />
+**Methods used**<br />
+* Split the Data into Training and Testing Sets<br />
+    `from sklearn.model_selection import train_test_split`<br />
+    `X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)`<br />
+* Create a Logistic Regression Model with the Original Data<br />
+    `from sklearn.linear_model import LogisticRegression`<br />
+    `model = LogisticRegression(random_state=1)`<br />
+    `lr_orginal_model = model.fit(X_train, y_train)`<br />
+* Predict a Logistic Regression Model with Resampled Training Data<br />
+    `y_original_pred = lr_orginal_model.predict(X_test)`<br />
+* Evaluate the original and resampled data model’s performance by doing the following:<br />
+    * Calculate the accuracy score of the model.<br />
             `baso = balanced_accuracy_score(y_test, y_original_pred)`<br />
-        * Generate a confusion matrix.<br />
+    * Generate a confusion matrix.<br />
             `confusion_matrix(y_test, y_original_pred)`<br />
-        * Print the classification report.<br />
+    * Print the classification report.<br />
             `print(classification_report_imbalanced(y_test, y_original_pred))`<br />
 <br />
 
@@ -37,37 +36,39 @@ Note that the first column in the confusion matrix contains the positive predict
 <br />
 To further explain, any prediction falls into one of two categories: true or false. In the context of credit worthiness, a true prediction means that the model categorized the loan/borrower as healthy. A false prediction means that the model categorized the loan/borrower as unhealthy.<br />
 <br />
-If the model predicted a loan/borrower as healthy, and the loan/borrower really was healthy, we call that prediction a **true positive (TP)**.<br />
+* If the model predicted a loan/borrower as healthy, and the loan/borrower really was healthy, we call that prediction a **true positive (TP)**.<br />
 <br />
-If the model predicted a loan/borrower as healthy, but the loan/borrower was not healthy, we call that prediction a **false positive (FP)**.<br />
+* If the model predicted a loan/borrower as healthy, but the loan/borrower was not healthy, we call that prediction a **false positive (FP)**.<br />
 <br />
-If the model predicted a loan/borrower as not healthy, but the loan/borrower really was healthy, we call that prediction a **false negative (FN)**.<br />
+* If the model predicted a loan/borrower as not healthy, but the loan/borrower really was healthy, we call that prediction a **false negative (FN)**.<br />
 <br />
-If the model predicted a loan/borrower as not healthy, and the loan/borrower really was not healthy, we call that prediction a **true negative (TN)**.<br />
+* If the model predicted a loan/borrower as not healthy, and the loan/borrower really was not healthy, we call that prediction a **true negative (TN)**.<br />
 <br />
+
 **Definition of terms and formulas:**<br />
-    * **Accuracy:** measures how often the model was correct.<br />
-          * *Formula: accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs)* <br />
-              * It does so by calculating the ratio of the number of correct predictions to the total number of outcomes.<br />
-    * **Precision:** measures how confident we are that the model correctly made the positive predictions (also known as the positive predictive value (PPV)).<br />
-          * *Formula: precision = TPs ÷ (TPs + FPs)*<br />
-              * We get the precision by dividing the number of TPs by the number of all the positives. (The latter is the sum of the TPs and the FPs.)<br />
-    * **Recall:** measures the number of actually fraudulent transactions that the model correctly classified as fraudulent.<br />
-          * *Formula: Recall = TPs / (TPs + FNs)*<br />
-              * To get the recall, we start with the number of TPs — that is, the number of times that the model correctly predicted a fraudulent transaction. Then compare this number to the total number of actually fraudulent transactions — including the ones that the model missed (that is, the FNs).<br />
+* **Accuracy:** measures how often the model was correct.<br />
+    * *Formula: accuracy = (TPs + TNs) ÷ (TPs + TNs + FPs + FNs)* <br />
+        * It does so by calculating the ratio of the number of correct predictions to the total number of outcomes.<br />
+* **Precision:** measures how confident we are that the model correctly made the positive predictions (also known as the positive predictive value (PPV)).<br />
+    * *Formula: precision = TPs ÷ (TPs + FPs)*<br />
+        * We get the precision by dividing the number of TPs by the number of all the positives. (The latter is the sum of the TPs and the FPs.)<br />
+* **Recall:** measures the number of actually fraudulent transactions that the model correctly classified as fraudulent.<br />
+    * *Formula: Recall = TPs / (TPs + FNs)*<br />
+        * To get the recall, we start with the number of TPs — that is, the number of times that the model correctly predicted a fraudulent transaction. Then compare this number to the total number of actually fraudulent transactions — including the ones that the model missed (that is, the FNs).<br />
 <br />
 * **Machine Learning Model 1:**<br />
   * Description of Model 1 Accuracy, Precision, and Recall scores<br />
-        * Accuracy: 0.9520479254722232<br />
-        * Precision: 0.85<br />
-        * Recall: 0.91<br />
+    * Accuracy: 0.9520479254722232<br />
+    * Precision: 0.85<br />
+    * Recall: 0.91<br />
 <br />
 * **Machine Learning Model 2:**<br />
   * Description of Model 2 Accuracy, Precision, and Recall scores<br />
-        * Accuracy: 0.9936781215845847<br />
-        * Precision: 0.84<br />
-        * Recall: 0.99<br />
+    * Accuracy: 0.9936781215845847<br />
+    * Precision: 0.84<br />
+    * Recall: 0.99<br />
 <br />
+
 ## Summary
 
 Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
