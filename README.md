@@ -48,7 +48,7 @@ Credit risk poses a classification problem that’s inherently imbalanced. This 
 ## Data Analysis
 <br />
 When analyzing data, it's often not enough to train and then use a machine learning model for making predictions. We also need to know how well the model performs at its prediction task.  We also want to know the percentage of predictions that the model gets right and how well it predicts each outcome. We can use the following metrics to give us additional insight into the model’s performance: Accuracy, Precision, and Recall.<br />
-
+<br />
 First, the **accuracy** of this analysis is 4 percent higher for the resampled data than the original model (0.99 vs 0.95), meaning that the model using resampled data was better at detecting true positives and true negatives.<br />
 <br />
 The **precision** for the "unhealthy" class is essentially equal in both data models with the original data (0.85) and the resampled data (0.84). This means that we can be about 85% confident that both models made positive preditions.<br />
