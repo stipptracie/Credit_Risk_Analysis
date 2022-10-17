@@ -30,20 +30,34 @@ In this analysis, I used a supervised learning model by following a basic patter
 
 ## Results
 
+### **Machine Learning Model 1:** <br />
+  * **Description of Model 1 Accuracy, Precision, and Recall scores**<br />
+    * Accuracy: 0.9520479254722232<br />
+    * Precision: 0.85<br />
+    * Recall: 0.91<br />
+<br />
+
+### **Machine Learning Model 2:**
+  * **Description of Model 2 Accuracy, Precision, and Recall scores**
+    * Accuracy: 0.9936781215845847
+    * Precision: 0.84
+    * Recall: 0.99
+<br />
+
+## Summary
+
 A classification algorithm results in two or more outcomes. Classifying unhealthy loans, for example, results in two outcomes: a loan borrower is either at risk for defaulting (unhealthy) or not. We can categorize these two predictions according to a confusion matrix.<br />
 <br />
 Note that the first column in the confusion matrix contains the positive predictions. That is, it separates all the predictions that the model made for the positive class into whether they were accurate or not. (In our example, the positive class is the “healthy” class.) The second column contains the negative predictions. That is, it separates all the predictions that the model made for the negative class. (In our example, the negative class is the “unhealthy” class.)<br />
 <br />
 To further explain, any prediction falls into one of two categories: true or false. In the context of credit worthiness, a true prediction means that the model categorized the loan/borrower as healthy. A false prediction means that the model categorized the loan/borrower as unhealthy.<br />
 <br />
+
 * If the model predicted a loan/borrower as healthy, and the loan/borrower really was healthy, we call that prediction a **true positive (TP)**.
-<br />
 
 * If the model predicted a loan/borrower as healthy, but the loan/borrower was not healthy, we call that prediction a **false positive (FP)**.
-<br />
 
 * If the model predicted a loan/borrower as not healthy, but the loan/borrower really was healthy, we call that prediction a **false negative (FN)**.
-<br />
 
 * If the model predicted a loan/borrower as not healthy, and the loan/borrower really was not healthy, we call that prediction a **true negative (TN)**.
 <br />
@@ -60,38 +74,16 @@ To further explain, any prediction falls into one of two categories: true or fal
         * To get the recall, we start with the number of TPs — that is, the number of times that the model correctly predicted a fraudulent transaction. Then compare this number to the total number of actually fraudulent transactions — including the ones that the model missed (that is, the FNs).<br />
 <br />
 
-* **Machine Learning Model 1:** <br />
-  * **Description of Model 1 Accuracy, Precision, and Recall scores**<br />
-    * Accuracy: 0.9520479254722232<br />
-    * Precision: 0.85<br />
-    * Recall: 0.91<br />
+**Analysis of Results**<br />
 <br />
-
-* **Machine Learning Model 2:**
-  * **Description of Model 2 Accuracy, Precision, and Recall scores**
-    * Accuracy: 0.9936781215845847
-    * Precision: 0.84
-    * Recall: 0.99
+First, the accuracy score is a small amount higher for the resampled data (0.99 vs 0.95), meaning that the model using resampled data was better at detecting true positives and true negatives.<br />
 <br />
-
-## Summary
-
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-???? The results regarding accuracy of the minority class are actually mixed when comparing the classifiction reports generated from the predictions with the original data versus the predictions with the resampled data.
-
-First, the accuracy score is a small amount higher for the resampled data (0.99 vs 0.95), meaning that the model using resampled data was better at detecting true positives and true negatives.   
-
 The precision for the minority class is higher with the original data (0.55) versus the resampled data (0.32) meaning that the original data was better at detecting the users that were actually going to default. Original - 0.85; Resampled - 0.84
-![][""]
-
+![Original Data]("../Resources/original_classification_report.png")
+<br />
 In terms of the recall, however, the minority class metric using resampled data was much better (0.82 vs 0.15). Meaning that the resampled data correctly clasified a higher percentage of the truly defaulting borrowers.  Original - 0.91; Resampled - 0.99
-![][""]
+![Resampled Data]("../Resources/resampled_classification_report.png")
+<br />
+All in, the model using resampled data was much better at detecting borrowers who are likely to default than the model generated using the original, imbalanced dataset.<br />
 
-f1 - Original - 0.88, Resampled - 0.91
 
-All in, the model using resampled data was much better at detecting borrowers who are likely to default that the model generated using the original, imbalanced dataset.
-
-If you do not recommend any of the models, please justify your reasoning.
