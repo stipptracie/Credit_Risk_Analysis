@@ -79,10 +79,10 @@ To further explain, any prediction falls into one of two categories: true or fal
 First, the accuracy score is a small amount higher for the resampled data (0.99 vs 0.95), meaning that the model using resampled data was better at detecting true positives and true negatives.<br />
 <br />
 The precision for the minority class is higher with the original data (0.55) versus the resampled data (0.32) meaning that the original data was better at detecting the users that were actually going to default. Original - 0.85; Resampled - 0.84<br />
-![Original Data]("https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/original_classification_report.png")<br />
+![Original Data](https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/original_classification_report.png)<br />
 <br />
 In terms of the recall, however, the minority class metric using resampled data was much better (0.82 vs 0.15). Meaning that the resampled data correctly clasified a higher percentage of the truly defaulting borrowers.  Original - 0.91; Resampled - 0.99<br />
-![Resampled Data]("https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/resampled_classification_report.png")<br />
+![Resampled Data](https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/resampled_classification_report.png)<br />
 <br />
 All in, the model using resampled data was much better at detecting borrowers who are likely to default than the model generated using the original, imbalanced dataset.<br />
 
