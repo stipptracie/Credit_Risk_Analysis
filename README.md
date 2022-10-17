@@ -51,10 +51,10 @@ When analyzing data, it's often not enough to train and then use a machine learn
 
 First, the **accuracy** of this analysis is 4 percent higher for the resampled data than the original model (0.99 vs 0.95), meaning that the model using resampled data was better at detecting true positives and true negatives.<br />
 <br />
-The **precision** for the minority class is higher with the original data (0.) versus the resampled data (0.32) meaning that the original data was better at detecting the users that were actually going to default. Original - 0.85; Resampled - 0.84<br />
+The **precision** for the "unhealthy" class is essentially equal in both data models with the original data (0.85) and the resampled data (0.84). This means that we can be about 85% confident that both models made positive preditions.<br />
 ![Original Data](https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/original_classification_report.png)<br />
 <br />
-In terms of the **recall**, however, the minority class metric (high risk/unhealthy) using resampled data was much better (0.99 vs 0.91). Meaning that the resampled data correctly clasified a higher percentage of the truly defaulting borrowers.<br />
+In terms of the **recall**, however, the "unhealthy" metric using resampled data was much better (0.99 vs 0.91). Meaning that the resampled data correctly clasified a higher percentage of the truly defaulting borrowers.<br />
 ![Resampled Data](https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/resampled_classification_report.png)<br />
 <br />
 All in, the model using **resampled data** was much better at detecting borrowers who are likely to default than the model generated using the original, imbalanced dataset.<br />
