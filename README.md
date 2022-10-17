@@ -1,6 +1,8 @@
 # Credit_Risk_Analysis
 
-The goal of this Jupyter notebook is to use supervised machine learning model by following a basic pattern: model-fit-predict. In this three-stage pattern, I presented a machine learning algorithm with data (the model stage), and the algorithm learns from this data (the fit stage) to form a predictive model (the predict stage).  Credit risk poses a classification problem that’s inherently imbalanced. This is because healthy loans easily outnumber risky loans. Various techniques are used in this analysis to train and evaluate models with imbalanced classes that can identify the creditworthiness of borrowers.  A dataset of historical lending activity from a peer-to-peer lending services company is analyzed to identify the creditworthiness of borrowers.
+The goal of this Jupyter notebook is to use supervised machine learning model by following a basic pattern: model-fit-predict. In this three-stage pattern, I presented a machine learning algorithm with data (the model stage), and the algorithm learns from this data (the fit stage) to form a predictive model (the predict stage).<br />
+<br />
+Credit risk poses a classification problem that’s inherently imbalanced. This is because healthy loans easily outnumber risky loans. Various techniques are used in this analysis to train and evaluate models with imbalanced classes that can identify the creditworthiness of borrowers.  A dataset of historical lending activity from a peer-to-peer lending services company is analyzed to identify the creditworthiness of borrowers.
 
 ---
 
@@ -10,7 +12,7 @@ The goal of this Jupyter notebook is to use supervised machine learning model by
 
 ### Libraries used:
 
-[NumPy](https://pandas.pydata.org/pandas-docs/stable/index.html](https://numpy.org/) - The fundamental package for scientific computing with Python
+[NumPy](https://pandas.pydata.org/pandas-docs/stable/index.html) - The fundamental package for scientific computing with Python
 
 [Pandas](https://pandas.pydata.org/pandas-docs/stable/index.html) - For the creation and manipulation of Data Frames
 
