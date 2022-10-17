@@ -1,1 +1,51 @@
 # Credit_Risk_Analysis
+
+The goal of this Jupyter notebook is to use supervised machine learning model by following a basic pattern: model-fit-predict. In this three-stage pattern, I presented a machine learning algorithm with data (the model stage), and the algorithm learns from this data (the fit stage) to form a predictive model (the predict stage).  Credit risk poses a classification problem that’s inherently imbalanced. This is because healthy loans easily outnumber risky loans. Various techniques are used in this analysis to train and evaluate models with imbalanced classes that can identify the creditworthiness of borrowers.  A dataset of historical lending activity from a peer-to-peer lending services company is analyzed to identify the creditworthiness of borrowers.
+
+---
+
+## Required Installs
+
+### Language: Python 3.9.12
+
+### Libraries used:
+
+[NumPy](https://pandas.pydata.org/pandas-docs/stable/index.html](https://numpy.org/) - The fundamental package for scientific computing with Python
+
+[Pandas](https://pandas.pydata.org/pandas-docs/stable/index.html) - For the creation and manipulation of Data Frames
+
+[Jupyter Labs](https://jupyter.org/) - An ipython kernel for interactive computing in python
+
+[OS](https://docs.python.org/3/library/os.html) - Miscellaneous operating system interface
+
+[Pathlib](https://docs.python.org/3/library/pathlib.html) - Object-oriented filesystem paths
+
+[Sklearn](https://scikit-learn.org/stable/index.html) - Scikit-learn: Machine Learning library, Simple and efficient tools for predictive data analysis
+
+[Imblearn](https://pypi.org/project/imblearn/) - Imbalanced Learn: Over and Under-sampling library
+
+---
+
+## Data Analysis
+<br />
+First, the accuracy score is a small amount higher for the resampled data (0.99 vs 0.95), meaning that the model using resampled data was better at detecting true positives and true negatives.<br />
+<br />
+The precision for the minority class is higher with the original data (0.55) versus the resampled data (0.32) meaning that the original data was better at detecting the users that were actually going to default. Original - 0.85; Resampled - 0.84<br />
+![Original Data](https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/original_classification_report.png)<br />
+<br />
+In terms of the recall, however, the minority class metric using resampled data was much better (0.82 vs 0.15). Meaning that the resampled data correctly clasified a higher percentage of the truly defaulting borrowers.  Original - 0.91; Resampled - 0.99<br />
+![Resampled Data](https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/resampled_classification_report.png)<br />
+<br />
+All in, the model using resampled data was much better at detecting borrowers who are likely to default than the model generated using the original, imbalanced dataset.<br />
+
+---
+
+### Contributors
+
+Created by Tracie Stipp
+>
+> email: stipptracie@gmail.com |
+> [GitHub](https://github.com/stipptracie) |
+> [LinkedIn](https://www.linkedin.com/in/tracie-stipp-0719691b/)
+
+
