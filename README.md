@@ -26,17 +26,36 @@ The goal of this Jupyter notebook is to use supervised machine learning model by
 
 ---
 
+## Results
+
+### **Machine Learning Model 1:** <br />
+  * **Description of Model 1 Accuracy, Precision, and Recall scores**<br />
+    * Accuracy: 0.9520479254722232<br />
+    * Precision: 0.85<br />
+    * Recall: 0.91<br />
+<br />
+
+### **Machine Learning Model 2:**
+  * **Description of Model 2 Accuracy, Precision, and Recall scores**
+    * Accuracy: 0.9936781215845847
+    * Precision: 0.84
+    * Recall: 0.99
+
+---
+
 ## Data Analysis
 <br />
-First, the accuracy score is a small amount higher for the resampled data (0.99 vs 0.95), meaning that the model using resampled data was better at detecting true positives and true negatives.<br />
+When analyzing data, it's often not enough to train and then use a machine learning model for making predictions. We also need to know how well the model performs at its prediction task.  We also want to know the percentage of predictions that the model gets right and how well it predicts each outcome. We can use the following metrics to give us additional insight into the model’s performance: Accuracy, Precision, and Recall.
+
+First, the **accuracy** of this analysis is 4 percent higher for the resampled data than the original model (0.99 vs 0.95), meaning that the model using resampled data was better at detecting true positives and true negatives.<br />
 <br />
-The precision for the minority class is higher with the original data (0.55) versus the resampled data (0.32) meaning that the original data was better at detecting the users that were actually going to default. Original - 0.85; Resampled - 0.84<br />
+The **precision** for the minority class is higher with the original data (0.55) versus the resampled data (0.32) meaning that the original data was better at detecting the users that were actually going to default. Original - 0.85; Resampled - 0.84<br />
 ![Original Data](https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/original_classification_report.png)<br />
 <br />
-In terms of the recall, however, the minority class metric using resampled data was much better (0.82 vs 0.15). Meaning that the resampled data correctly clasified a higher percentage of the truly defaulting borrowers.  Original - 0.91; Resampled - 0.99<br />
+In terms of the **recall**, however, the minority class metric (high risk/unhealthy) using resampled data was much better (0.99 vs 0.91). Meaning that the resampled data correctly clasified a higher percentage of the truly defaulting borrowers.<br />
 ![Resampled Data](https://github.com/stipptracie/Credit_Risk_Analysis/blob/main/Resources/resampled_classification_report.png)<br />
 <br />
-All in, the model using resampled data was much better at detecting borrowers who are likely to default than the model generated using the original, imbalanced dataset.<br />
+All in, the model using **resampled data** was much better at detecting borrowers who are likely to default than the model generated using the original, imbalanced dataset.<br />
 
 ---
 
